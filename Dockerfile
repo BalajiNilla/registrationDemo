@@ -1,5 +1,4 @@
-FROM openjdk:11-jre-slim
-WORKDIR /app
-COPY target/docker-spring-boot-postgres-1.0.0.jar .
+FROM openjdk:8
+ADD target/registration-0.0.1-SNAPSHOT.jar registration-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","docker-spring-boot-postgres-1.0.0.jar"]
+ENTRYPOINT ["java", "-jar", "registration-0.0.1-SNAPSHOT.jar"]
