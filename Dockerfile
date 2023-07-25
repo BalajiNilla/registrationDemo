@@ -1,4 +1,5 @@
-FROM openjdk:8
-ADD target/registration-0.0.1-SNAPSHOT.jar registration-0.0.1-SNAPSHOT.jar
+FROM openjdk:17
+VOLUME /tmp
+COPY target/registration-0.0.1-SNAPSHOT.jar registration.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "registration-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "registration.jar"]
